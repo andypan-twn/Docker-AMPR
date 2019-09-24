@@ -1,4 +1,4 @@
-# Docker-phpDevEnv
+# Docker-AMPR
 Example for Apache+Mysql+PHP+Redis run on docker
 
 ## How to use
@@ -36,7 +36,7 @@ Example for Apache+Mysql+PHP+Redis run on docker
 
 2. init composer
     ```bash
-     $ make exec
+     $ composer init -q
     ```
 
 3. request laravel
