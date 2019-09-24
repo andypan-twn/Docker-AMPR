@@ -1,0 +1,51 @@
+version: "3.5"
+services:
+  web:
+    container_name: ${APP_NAME}
+    hostname: ${APP_NAME}
+    networks:
+    - LAN
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:8080
+    volumes:
+      - ./:/var/www/html/
+    environment:
+      DB_HOST: ${DB_HOST}
+      REDIS_HOST: ${REDIS_HOST}
+
+  mysql:
+    image: mysql:5.6
+    container_name: ${DB_HOST}
+    hostname: ${DB_HOST}
+    networks:
+    - LAN
+    ports:
+    - ${DB_PORT}:3306
+    volumes:
+    - ./database:/docker-entrypoint-initdb.d
+    command: [
+      --innodb-file-format=barracuda,
+      --innodb-file-per-table=1,
+      --innodb-large-prefix=1,
+      --character-set-server=utf8,
+      --collation-server=utf8_unicode_ci
+    ]
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+
+  redis:
+    image: redis:alpine
+    container_name: ${REDIS_HOST}
+    hostname: ${REDIS_HOST}
+    networks:
+    - LAN
+    ports:
+    - ${REDIS_PORT}:6379
+networks:
+  LAN:
+    driver: bridge
+    name: web_LAN
