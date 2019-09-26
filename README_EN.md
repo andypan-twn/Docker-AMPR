@@ -34,15 +34,10 @@ Example for Apache+Mysql+PHP+Redis run on docker
      $ make exec
     ```
 
-2. init composer
-    ```bash
-     $ composer init -q
-    ```
-
-3. request laravel
+2. request laravel
     ```bash
      $ composer create-project --prefer-dist laravel/laravel blog
     ```
 
-4. enjoy!<br>
+3. enjoy!<br>
     your URL like: `http://127.0.0.1:8080/blog/public`
