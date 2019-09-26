@@ -37,16 +37,11 @@ P.S. 預設網址: `http://127.0.0.1:8080/`
      $ make exec
     ```
 
-2. composer 初始化
-    ```bash
-     $ composer init -q
-    ```
-
-3. 安裝 laravel 相關套件
+2. 安裝 laravel 相關套件
     ```bash
      $ composer create-project --prefer-dist laravel/laravel blog
     ```
 
-4. 完成!
+3. 完成!
 
 P.S. 如果想查看 laravel 歡迎畫面，預設網址: `http://127.0.0.1:8080/blog/public`
