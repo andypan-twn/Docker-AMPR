@@ -1,6 +1,6 @@
 # Docker-AMPR
-- Apache + mod_fcgid + PHP + Redis + MySQL 直接在 docker 上運行懶人包。
-- 使用 [神人網紅等級的沙先生](https://shazi.info/) 的 [映像檔](https://github.com/shazi7804/docker-apache2-fcgid-worker-php7)。
+- Apache + fcgid + PHP + Redis + MySQL 直接在 docker 上運行懶人包。
+- 使用 [網紅神人等級](https://shazi.info/) 的 [映像檔](https://github.com/shazi7804/docker-apache2-fcgid-worker-php7)。
 - [English](https://github.com/andykuen/Docker-AMPR/blob/master/README_EN.md)
 
 ## 如何使用
